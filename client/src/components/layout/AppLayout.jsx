@@ -21,7 +21,7 @@ const AppLayout = () => {
           >
             One
           </Grid>
-          <Grid item xs={12} sm={8} md={5} lg={6} sx={{ bgcolor: "white" }}>
+          <Grid item xs={12} sm={8} md={5} lg={6} sx={{ bgcolor: "purple" }}>
             <WrappedComponent {...props} />
           </Grid>
           <Grid
