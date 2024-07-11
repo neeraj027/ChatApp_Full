@@ -18,7 +18,7 @@ const App = () => {
         <Routes>
           <Route element={<ProctectRoute user={user} />}>
             <Route path="/" element={<Home />} />
-            <Route path="/chat/:id" element={<Chat />} />
+            <Route path="/chat/:chatId" element={<Chat />} />
             <Route path="/groups" element={<Groups />} />
           </Route>
 
