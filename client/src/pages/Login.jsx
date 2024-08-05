@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { VisuallyHiddenInput } from "../components/styles/StyledComponent";
+import React, { useState } from 'react';
+import { VisuallyHiddenInput } from '../components/styles/StyledComponent';
 import {
   Avatar,
   Button,
@@ -9,49 +9,49 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
-import { CameraAlt as CameraAltIcon } from "@mui/icons-material";
+import { CameraAlt as CameraAltIcon } from '@mui/icons-material';
 
-import { useFileHandler, useInputValidation } from "6pp";
-import { usernameValidator } from "../utils/validator";
-import img from "../assets/loginImg.avif";
+import { useFileHandler, useInputValidation } from '6pp';
+import { usernameValidator } from '../utils/validator';
+import img from '../assets/loginImg.avif';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
 
-  const name = useInputValidation("");
-  const username = useInputValidation("", usernameValidator);
-  const bio = useInputValidation("");
-  const password = useInputValidation("");
-  const avatar = useFileHandler("single");
+  const name = useInputValidation('');
+  const username = useInputValidation('', usernameValidator);
+  const bio = useInputValidation('');
+  const password = useInputValidation('');
+  const avatar = useFileHandler('single');
 
   return (
     <div
       style={{
         backgroundImage: `url(${img}) `,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       <Container
-        component={"main"}
-        maxWidth={"xs"}
+        component={'main'}
+        maxWidth={'xs'}
         sx={{
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Paper
           elevation={4}
           sx={{
             padding: 4,
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            backgroundColor: "rgba(255,255,255,0.6)",
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            backgroundColor: 'rgba(255,255,255,0.6)',
           }}
         >
           {isLogin ? (
@@ -77,7 +77,7 @@ const Login = () => {
                   onChange={password.changeHandler}
                 />
                 <Button
-                  sx={{ marginY: "1rem" }}
+                  sx={{ marginY: '1rem' }}
                   fullWidth
                   type="submit"
                   variant="contained"
@@ -89,7 +89,7 @@ const Login = () => {
                 <Typography align="center">OR</Typography>
 
                 <Button
-                  sx={{ marginTop: "1rem" }}
+                  sx={{ marginTop: '1rem' }}
                   onClick={() => setIsLogin(false)}
                   variant="outlined"
                   color="primary"
@@ -102,25 +102,25 @@ const Login = () => {
           ) : (
             <>
               <Typography variant="h5">Register</Typography>
-              <Stack position={"relative"}>
+              <Stack position={'relative'}>
                 <Avatar
                   sx={{
-                    width: "6rem",
-                    height: "6rem",
-                    objectFit: "contain",
+                    width: '6rem',
+                    height: '6rem',
+                    objectFit: 'contain',
                   }}
                   src={avatar.preview}
                 />
 
                 <IconButton
                   sx={{
-                    position: "absolute",
-                    bottom: "0",
-                    right: "0",
-                    color: "white",
-                    backgroundColor: "rgba(0,0,0,0.5)",
-                    ":hover": {
-                      backgroundColor: "rgba(0,0,0,0.7)",
+                    position: 'absolute',
+                    bottom: '0',
+                    right: '0',
+                    color: 'white',
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    ':hover': {
+                      backgroundColor: 'rgba(0,0,0,0.7)',
                     },
                   }}
                   component="label"
@@ -180,7 +180,7 @@ const Login = () => {
                 />
 
                 <Button
-                  sx={{ marginY: "1rem" }}
+                  sx={{ marginY: '1rem' }}
                   fullWidth
                   type="submit"
                   variant="contained"
@@ -192,7 +192,7 @@ const Login = () => {
                 <Typography align="center">OR</Typography>
 
                 <Button
-                  sx={{ marginTop: "1rem" }}
+                  sx={{ marginTop: '1rem' }}
                   onClick={() => setIsLogin(true)}
                   variant="outlined"
                   color="primary"

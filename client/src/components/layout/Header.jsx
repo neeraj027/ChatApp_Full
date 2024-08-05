@@ -54,7 +54,7 @@ const Header = () => {
   return (
     <>
       <Box sx={{ flexGrow: 1 }} height={"4rem"}>
-        <AppBar sx={{ bgcolor: "orange" }}>
+        <AppBar color="inherit">
           <Toolbar>
             <Typography
               variant="h6"
@@ -73,6 +73,15 @@ const Header = () => {
             <Box sx={{ flexGrow: 1 }}></Box>
 
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              <Tooltip title="Search">
+                <IconButton
+                  size="large"
+                  color="inherit"
+                  onClick={openSearchDialog}
+                >
+                  <SearchIcon />
+                </IconButton>
+              </Tooltip>
               <Tooltip title="New Group">
                 <IconButton size="large" color="inherit" onClick={openNewGroup}>
                   <AddIcon />
@@ -98,15 +107,6 @@ const Header = () => {
                   <NotificationsIcon />
                 </IconButton>
               </Tooltip>
-              <Tooltip title="Search">
-                <IconButton
-                  size="large"
-                  color="inherit"
-                  onClick={openSearchDialog}
-                >
-                  <SearchIcon />
-                </IconButton>
-              </Tooltip>
               <Tooltip title="Logout">
                 <IconButton
                   size="large"
@@ -120,21 +120,9 @@ const Header = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      {isSearch && (
-        <Suspense fallback={<div>...Loading</div>}>
-          <SearchDialog />
-        </Suspense>
-      )}
-      {isNotifications && (
-        <Suspense fallback={<div>...Loading</div>}>
-          <Notifications />
-        </Suspense>
-      )}
-      {isNewGroup && (
-        <Suspense fallback={<div>...Loading</div>}>
-          <NewGroup />
-        </Suspense>
-      )}
+      {isSearch && <SearchDialog />}
+      {isNotifications && <Notifications />}
+      {isNewGroup && <NewGroup />}
     </>
   );
 };
