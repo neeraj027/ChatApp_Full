@@ -39,7 +39,7 @@ const Groups = () => {
   const [groupNameUpdatedValue, setGroupNameUpdatedValue] = useState('');
   const [edit, setEdit] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
-  const isAddMember = true;
+  const isAddMember = false;
 
   const handleMobileMenuOpen = () => {
     setMobileMenuOpen(true);
@@ -131,6 +131,8 @@ const Groups = () => {
 
   return (
     <Grid container height={'100vh'}>
+      {isAddMember && <AddMember />}
+
       {
         <ConfirmDelete
           setDeleteModal={setDeleteModal}
